@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vincent Guiblain | Data Scientist Junior</title>
+    <title>Vincent Guiblain | Data Scientist Consultant</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Fira+Code&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* --- DESIGN SYSTEM "TECH CONSULTING" --- */
+        /* --- DESIGN SYSTEM "DATA CONSULTING" --- */
         :root {
-            --bg-color: #0a192f;
-            --tech-cyan: #64ffda; /* La couleur "Tech" par excellence */
-            --text-primary: #ccd6f6;
-            --text-secondary: #8892b0;
-            --card-bg: #112240;
+            --bg-dark: #0f172a;       /* Bleu nuit très profond */
+            --bg-card: #1e293b;       /* Bleu gris pour les cartes */
+            --accent-cyan: #22d3ee;   /* Cyan électrique (Data) */
+            --accent-purple: #818cf8; /* Violet (Intelligence Artificielle) */
+            --text-light: #f8fafc;
+            --text-dim: #94a3b8;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -23,13 +24,21 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-primary);
+            background-color: var(--bg-dark);
+            color: var(--text-light);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        h1, h2, h3 { font-weight: 800; color: #e6f1ff; }
-        .mono { font-family: 'Fira Code', monospace; color: var(--tech-cyan); }
+        h1, h2, h3 { font-family: 'Inter', sans-serif; font-weight: 800; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        
+        .highlight { color: var(--accent-cyan); }
+        .gradient-text {
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
         /* --- NAVBAR --- */
         .navbar {
@@ -39,103 +48,142 @@
             padding: 20px 50px;
             position: fixed;
             width: 100%;
-            background: rgba(10, 25, 47, 0.95);
+            background: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(10px);
             z-index: 100;
-            border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+            border-bottom: 1px solid rgba(34, 211, 238, 0.1);
         }
 
-        .logo { font-size: 1.2rem; font-weight: bold; }
+        .logo { font-size: 1.1rem; font-weight: 700; letter-spacing: -0.5px; }
 
         /* --- HERO SECTION --- */
         .hero {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             padding: 0 10%;
             position: relative;
         }
 
-        .hero h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 20px; }
-        .hero p { max-width: 600px; font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 30px; }
-
-        .btn-tech {
-            padding: 12px 25px;
-            border: 1px solid var(--tech-cyan);
-            color: var(--tech-cyan);
-            border-radius: 4px;
-            text-decoration: none;
-            font-family: 'Fira Code', monospace;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            margin-right: 15px;
+        /* Effet de fond "Matrix" subtil */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -20%; right: -10%;
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(34,211,238,0.1) 0%, rgba(15,23,42,0) 70%);
+            border-radius: 50%;
+            z-index: -1;
         }
 
-        .btn-tech:hover {
-            background: rgba(100, 255, 218, 0.1);
-            transform: translateY(-2px);
-        }
-
-        /* --- SECTION COMPÉTENCES --- */
-        .section { padding: 100px 10%; }
+        .hero-content { max-width: 800px; }
         
-        .grid-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 50px;
+        .hero h1 { font-size: 4.5rem; line-height: 1.1; margin-bottom: 25px; letter-spacing: -2px; }
+        .hero p { font-size: 1.25rem; color: var(--text-dim); margin-bottom: 40px; max-width: 600px; }
+
+        .tag {
+            background: rgba(34, 211, 238, 0.1);
+            color: var(--accent-cyan);
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-bottom: 20px;
+            display: inline-block;
         }
 
-        .tech-card {
-            background: var(--card-bg);
-            padding: 30px;
+        /* Boutons Tech */
+        .btn-group { display: flex; gap: 20px; }
+        
+        .btn-primary {
+            padding: 15px 35px;
+            background: transparent;
+            border: 1px solid var(--accent-cyan);
+            color: var(--accent-cyan);
+            font-family: 'JetBrains Mono', monospace;
+            text-decoration: none;
             border-radius: 4px;
-            transition: transform 0.3s;
+            transition: all 0.3s;
             position: relative;
             overflow: hidden;
         }
 
-        .tech-card:hover { transform: translateY(-7px); }
-        
-        /* Petite ligne cyan au survol */
-        .tech-card::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 0; height: 3px;
-            background: var(--tech-cyan);
-            transition: width 0.3s;
+        .btn-primary:hover {
+            background: rgba(34, 211, 238, 0.1);
+            box-shadow: 0 0 20px rgba(34, 211, 238, 0.2);
         }
-        .tech-card:hover::after { width: 100%; }
 
-        .icon-box { font-size: 2.5rem; color: var(--tech-cyan); margin-bottom: 20px; }
-        
-        .tech-list li {
-            list-style: none;
-            margin-bottom: 10px;
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            display: flex;
+        /* --- SECTION FORMATION (Double Diplôme) --- */
+        .section { padding: 100px 10%; }
+        .section-title { font-size: 2.5rem; margin-bottom: 50px; display: flex; align-items: center; gap: 15px; }
+        .line { height: 1px; background: #334155; flex-grow: 1; }
+
+        .formation-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
         }
-        .tech-list li::before {
+
+        .formation-card {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-cyan);
+        }
+
+        .formation-year { font-size: 0.9rem; color: var(--accent-cyan); margin-bottom: 10px; }
+        .formation-title { font-size: 1.5rem; margin-bottom: 15px; }
+        .formation-list li {
+            list-style: none;
+            margin-bottom: 8px;
+            color: var(--text-dim);
+            display: flex;
+            align-items: center;
+        }
+        .formation-list li::before {
             content: "▹";
-            color: var(--tech-cyan);
+            color: var(--accent-cyan);
             margin-right: 10px;
         }
 
-        /* --- CONTACT --- */
-        .contact-box {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 50px;
+        /* --- SECTION PROJETS (TECH) --- */
+        .project-card {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            transition: transform 0.3s;
+            border: 1px solid transparent;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(34, 211, 238, 0.3);
         }
 
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
+        .project-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }
+        .folder-icon { font-size: 2.5rem; color: var(--accent-purple); }
+        .tech-stack { display: flex; gap: 15px; font-size: 0.8rem; color: var(--text-dim); font-family: 'JetBrains Mono', monospace; margin-top: 20px; }
+
+        /* --- SECTION EXPERIENCE (CONSULTING) --- */
+        .exp-box {
+            border-left: 2px solid #334155;
+            padding-left: 30px;
+            position: relative;
+        }
+        .exp-box::before {
+            content: '';
+            position: absolute;
+            left: -6px; top: 0;
+            width: 10px; height: 10px;
+            background: var(--accent-cyan);
+            border-radius: 50%;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 900px) {
+            .hero h1 { font-size: 3rem; }
+            .formation-grid { grid-template-columns: 1fr; }
             .navbar { padding: 20px; }
-            .grid-cards { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -143,86 +191,142 @@
 
     <nav class="navbar">
         <div class="logo mono">
-            <span style="color: var(--text-primary);">Vincent.</span><span style="color: var(--tech-cyan);">Data()</span>
+            <span style="color: var(--accent-cyan);">def</span> vincent_guiblain<span style="color: var(--accent-purple);">()</span>:
         </div>
-        <div class="mono" style="font-size: 0.8rem;">CANDIDATURE STAGE 2026</div>
+        <div class="mono" style="font-size: 0.8rem; color: var(--text-dim);">
+            STATUS: <span style="color: #4ade80;">AVAILABLE_APRIL_2026</span>
+        </div>
     </nav>
 
     <section class="hero">
-        <div>
-            <p class="mono">Bonjour, je m'appelle Vincent Guiblain</p>
-            <h1>Je transforme la donnée<br>en <span style="color: var(--tech-cyan);">valeur business.</span></h1>
+        <div class="hero-content">
+            <div class="tag mono">DATA SCIENTIST JUNIOR</div>
+            <h1>Ingénierie Statistique<br>& <span class="gradient-text">Machine Learning.</span></h1>
             <p>
-                Futur Ingénieur Data Scientist (ISADS).<br>
-                Je combine une expertise technique en <strong>Python & Machine Learning</strong> avec une compréhension terrain des enjeux <strong>Retail & Luxe</strong>.
+                Futur ingénieur <strong>ISADS</strong> avec un background solide en Data Science (M1 SDTS).
+                Je construis des modèles prédictifs robustes et je traduis la donnée complexe en stratégie business pour le Retail et le Luxe.
             </p>
-            <div style="margin-top: 40px;">
-                <a href="cv_vincent.pdf" target="_blank" class="btn-tech">
-                    <i class="fa-regular fa-file-code" style="margin-right: 10px;"></i> CV.pdf
-                </a>
-                <a href="mailto:vincent.guiblain@gmail.com" class="btn-tech">
-                    <i class="fa-solid fa-envelope" style="margin-right: 10px;"></i> Contact
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <h2 style="display: flex; align-items: center;">
-            <span class="mono" style="font-size: 1.2rem; margin-right: 15px;">01.</span> 
-            Pourquoi ce profil match avec Equancy ?
-        </h2>
-
-        <div class="grid-cards">
             
-            <div class="tech-card">
-                <div class="icon-box"><i class="fa-brands fa-python"></i></div>
-                <h3>Data Science & ML</h3>
-                <ul class="tech-list" style="margin-top: 20px;">
-                    <li><strong>Python Expert :</strong> Pandas, NumPy, Scikit-Learn.</li>
-                    <li><strong>Machine Learning :</strong> Modélisation prédictive et segmentation (Clustering).</li>
-                    <li><strong>Projets Concrets :</strong> Algorithmes de graphes (Métro Parisien) et analyse statistique.</li>
+            <div class="btn-group">
+                <a href="cv_vincent.pdf" target="_blank" class="btn-primary">
+                    <i class="fa-regular fa-file-code"></i> TÉLÉCHARGER LE CV
+                </a>
+                <a href="mailto:vincent.guiblain@gmail.com" class="btn-primary" style="border-color: var(--accent-purple); color: var(--accent-purple);">
+                    <i class="fa-solid fa-envelope"></i> CONTACT
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title"><span class="mono highlight">01.</span> Formation Hybride <span class="line"></span></h2>
+        
+        <div class="formation-grid">
+            <div class="formation-card">
+                <div class="formation-year mono">2025 - 2026 | M2 ISADS (UVSQ)</div>
+                <h3 class="formation-title">Ingénierie Statistique & Actuariat</h3>
+                <ul class="formation-list">
+                    <li><strong>Spécialisation :</strong> Modélisation prédictive avancée & Scoring.</li>
+                    <li><strong>Machine Learning :</strong> Apprentissage Supervisé (Random Forest, XGBoost) & Non-supervisé.</li>
+                    <li><strong>Projets :</strong> Deep Learning & Séries Temporelles.</li>
                 </ul>
             </div>
 
-            <div class="tech-card">
-                <div class="icon-box"><i class="fa-solid fa-store"></i></div>
-                <h3>Culture Retail & Luxe</h3>
-                <ul class="tech-list" style="margin-top: 20px;">
-                    <li><strong>Expérience Terrain :</strong> Florence Doré.</li>
-                    <li><strong>Business Acumen :</strong> Je comprends les KPIs de vos clients (Expérience client, flux, fidélisation).</li>
-                    <li><strong>Consulting :</strong> Capacité à traduire un problème métier en solution Data.</li>
+            <div class="formation-card" style="border-color: var(--accent-purple);">
+                <div class="formation-year mono" style="color: var(--accent-purple);">2024 - 2025 | M1 SDTS (UPEC)</div>
+                <h3 class="formation-title">Data Science & Systèmes Distribués</h3>
+                <ul class="formation-list">
+                    <li><strong>Cœur Tech :</strong> Algorithmique complexe & Architecture Big Data.</li>
+                    <li><strong>Programmation :</strong> Python Expert (Pandas, Scikit-Learn), SQL avancé.</li>
+                    <li><strong>Cloud :</strong> Initiation aux environnements distribués & Cloud Computing.</li>
                 </ul>
             </div>
+        </div>
+    </section>
 
-            <div class="tech-card">
-                <div class="icon-box"><i class="fa-solid fa-server"></i></div>
-                <h3>Vers le MLOps</h3>
-                <ul class="tech-list" style="margin-top: 20px;">
-                    <li><strong>Industrialisation :</strong> Intérêt fort pour le déploiement de modèles (pas juste en notebook).</li>
-                    <li><strong>Rigueur :</strong> Expérience en Cybersécurité (Ineo Défense) et protection des données.</li>
-                    <li><strong>Outils :</strong> SQL pour les bases de données, Git pour le versioning.</li>
-                </ul>
+    <section class="section">
+        <h2 class="section-title"><span class="mono highlight">02.</span> Portfolio Technique <span class="line"></span></h2>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+            
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="folder-icon"><i class="fa-solid fa-network-wired"></i></div>
+                    <i class="fa-brands fa-python" style="font-size: 1.5rem; color: var(--text-dim);"></i>
+                </div>
+                <h3>Optimisation Algorithmique</h3>
+                <p style="color: var(--text-dim); font-size: 0.9rem;">
+                    Implémentation des algorithmes <strong>A* et Bellman-Ford</strong> pour calculer les itinéraires optimaux sur le réseau du métro parisien. Gestion de graphes complexes.
+                </p>
+                <div class="tech-stack">
+                    <span>Python</span>
+                    <span>Graph Theory</span>
+                    <span>Optimization</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="folder-icon"><i class="fa-solid fa-chart-pie"></i></div>
+                    <i class="fa-brands fa-r-project" style="font-size: 1.5rem; color: var(--text-dim);"></i>
+                </div>
+                <h3>Analyse Multivariée (Retail/Socio)</h3>
+                <p style="color: var(--text-dim); font-size: 0.9rem;">
+                    Analyse de données sociologiques (ACP, ACM) pour identifier des clusters de comportements. Applicable à la segmentation client en Retail.
+                </p>
+                <div class="tech-stack">
+                    <span>R Language</span>
+                    <span>Statistics</span>
+                    <span>Clustering</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="folder-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <i class="fa-solid fa-code" style="font-size: 1.5rem; color: var(--text-dim);"></i>
+                </div>
+                <h3>Cryptographie & Sécurité</h3>
+                <p style="color: var(--text-dim); font-size: 0.9rem;">
+                    Stage chez <strong>Ineo Défense</strong>. Développement d'algorithmes de chiffrement sur microcontrôleur. Rigueur absolue et gestion de données sensibles.
+                </p>
+                <div class="tech-stack">
+                    <span>C/C++</span>
+                    <span>Security</span>
+                    <span>Embedded</span>
+                </div>
             </div>
 
         </div>
     </section>
 
     <section class="section">
-        <div class="contact-box">
-            <h2 class="mono" style="color: var(--tech-cyan); margin-bottom: 20px;">02. Next Step</h2>
-            <h3 style="font-size: 2rem; margin-bottom: 20px;">Prêt à rejoindre l'équipe</h3>
-            <p style="color: var(--text-secondary); margin-bottom: 40px;">
-                Disponible dès Avril/Mai, je serais ravi de discuter de la manière dont je peux contribuer aux projets Data d'Equancy.
-            </p>
-            <a href="mailto:vincent.guiblain@gmail.com" class="btn-tech" style="padding: 15px 40px; font-size: 1.1rem;">
-                Envoyer un message
-            </a>
+        <h2 class="section-title"><span class="mono highlight">03.</span> L'Approche Consultant <span class="line"></span></h2>
+        
+        <div style="background: rgba(34, 211, 238, 0.05); padding: 40px; border-radius: 8px;">
+            <div style="display: flex; gap: 20px; align-items: flex-start;">
+                <div style="font-size: 3rem; color: var(--accent-cyan);"><i class="fa-solid fa-user-tie"></i></div>
+                <div>
+                    <h3 style="margin-bottom: 15px;">Retail, Luxe & Excellence Client</h3>
+                    <p style="color: var(--text-dim); margin-bottom: 20px;">
+                        Au-delà de la technique, un Data Scientist chez Equancy doit comprendre le métier du client.
+                        Mon expérience chez <strong>Florence Doré</strong> et <strong>BNP Paribas</strong> m'a appris les codes du service haut de gamme.
+                    </p>
+                    <ul class="formation-list">
+                        <li>Compréhension des enjeux opérationnels (Flux, Satisfaction client).</li>
+                        <li>Capacité à vulgariser la donnée pour des interlocuteurs non-techniques.</li>
+                        <li>Adaptabilité et gestion du stress en environnement exigeant.</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
-    <footer style="text-align: center; padding: 20px; font-family: 'Fira Code', monospace; font-size: 0.8rem; color: var(--text-secondary);">
-        <div>Conçu & Codé par Vincent Guiblain</div>
+    <footer style="text-align: center; padding: 40px; color: var(--text-dim); font-size: 0.8rem;" class="mono">
+        <div>Designed & Built by Vincent Guiblain</div>
+        <div style="margin-top: 10px;">
+            <a href="mailto:vincent.guiblain@gmail.com" style="color: var(--accent-cyan); text-decoration: none;">vincent.guiblain@gmail.com</a>
+        </div>
     </footer>
 
 </body>
