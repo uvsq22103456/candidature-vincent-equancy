@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vincent Guiblain | Candidature Equancy</title>
+    <title>Vincent Guiblain | Candidature Stage Data</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* --- DESIGN SYSTEM : TECH CONSULTING --- */
+        /* --- DESIGN SYSTEM : TECH SOBRE --- */
         :root {
             --bg-dark: #0f172a;       
             --bg-card: #1e293b;       
@@ -49,7 +49,6 @@
 
         .logo { font-size: 1.2rem; font-weight: 700; }
         
-        /* CIBLE EQUANCY DANS LA BARRE */
         .status-badge {
             background: rgba(34, 211, 238, 0.1);
             color: var(--accent-cyan);
@@ -73,30 +72,31 @@
         .hero-content { max-width: 850px; z-index: 10; }
         
         .hero h1 { 
-            font-size: 4rem; 
-            line-height: 1.1; 
+            font-size: 3.5rem; 
+            line-height: 1.2; 
             margin-bottom: 25px; 
             letter-spacing: -1px;
         }
         
         .hero p { 
-            font-size: 1.25rem; 
+            font-size: 1.15rem; 
             color: var(--text-dim); 
             margin-bottom: 40px; 
-            max-width: 650px; 
+            max-width: 700px; 
         }
 
         /* Boutons */
         .btn {
             display: inline-flex;
             align-items: center;
-            padding: 15px 30px;
+            padding: 12px 25px;
             border-radius: 5px;
             text-decoration: none;
             font-weight: 600;
             font-family: 'JetBrains Mono', monospace;
             transition: all 0.3s;
             margin-right: 15px;
+            font-size: 0.9rem;
         }
 
         .btn-primary {
@@ -123,8 +123,8 @@
         /* --- SECTIONS --- */
         .section { padding: 100px 10%; }
         .section-title { 
-            font-size: 2rem; 
-            margin-bottom: 50px; 
+            font-size: 1.8rem; 
+            margin-bottom: 40px; 
             display: flex; 
             align-items: center; 
             gap: 15px; 
@@ -150,7 +150,7 @@
 
         .card-icon { font-size: 2rem; color: var(--accent-cyan); margin-bottom: 20px; }
 
-        /* --- CORRECTION ALIGNEMENT CSS --- */
+        /* --- LISTE TECHNIQUE --- */
         ul.tech-list { padding: 0; }
         
         ul.tech-list li {
@@ -158,7 +158,7 @@
             margin-bottom: 12px;
             color: var(--text-dim);
             font-size: 0.9rem;
-            display: flex; /* Flexbox pour aligner */
+            display: flex;
             align-items: flex-start;
         }
         
@@ -170,10 +170,9 @@
             flex-shrink: 0;
         }
 
-        /* Largeur fixe pour les titres (Supervisé, etc.) pour que tout soit aligné */
         ul.tech-list li strong {
             color: #fff;
-            min-width: 130px; 
+            min-width: 110px; 
             display: inline-block;
             font-weight: 600;
             flex-shrink: 0;
@@ -189,10 +188,10 @@
         }
 
         @media (max-width: 900px) {
-            .hero h1 { font-size: 2.8rem; }
+            .hero h1 { font-size: 2.5rem; }
             .grid-2, .grid-3 { grid-template-columns: 1fr; }
             .navbar { padding: 20px; }
-            ul.tech-list li { flex-direction: column; } /* Sur mobile, on empile */
+            ul.tech-list li { flex-direction: column; }
             ul.tech-list li strong { margin-bottom: 5px; }
         }
     </style>
@@ -202,27 +201,26 @@
     <nav class="navbar">
         <div class="logo mono">
             <span style="color: var(--accent-purple);">def</span> 
-            
             <span style="color: var(--accent-cyan);">vincent_guiblain</span><span style="color: var(--text-light);">(target="Equancy"):</span>
         </div>
-        
         <div class="mono status-badge">
-            return "Data_Scientist"
+            return "Stagiaire_Motivé"
         </div>
     </nav>
 
     <section class="hero">
         <div class="hero-content">
-            <div class="mono" style="color: var(--accent-cyan); margin-bottom: 20px;">Bonjour, je suis Vincent Guiblain</div>
-            <h1>Data Scientist pour<br><span style="color: var(--text-light);">Equancy.</span></h1>
+            <div class="mono" style="color: var(--accent-cyan); margin-bottom: 20px;">Bonjour, je suis Vincent</div>
+            <h1>Futur Data Scientist,<br><span style="color: var(--text-light);">curieux & impliqué.</span></h1>
             <p>
-                Futur ingénieur <strong>ISADS</strong> (Statistique & Data Science).<br>
-                Je suis prêt à mettre mon expertise <strong>Machine Learning</strong> et ma double culture (Tech & Retail) au service des clients d'<strong>Equancy</strong>.
+                Actuellement en fin d'études d'ingénieur (M2 ISADS), je cherche un stage pour <strong>apprendre le métier de consultant</strong> à vos côtés.
+                <br><br>
+                Je possède un bagage technique solide (Python, Stats) que je souhaite mettre au service des projets d'<strong>Equancy</strong>, avec humilité et rigueur.
             </p>
             
             <div style="margin-top: 30px;">
                 <a href="cv_vincent.pdf" target="_blank" class="btn btn-primary">
-                    <i class="fa-regular fa-file-pdf" style="margin-right: 10px;"></i> Voir mon CV
+                    <i class="fa-regular fa-file-pdf" style="margin-right: 10px;"></i> Mon CV
                 </a>
                 <a href="mailto:vincent.guiblain@gmail.com" class="btn btn-secondary">
                     <i class="fa-solid fa-envelope" style="margin-right: 10px;"></i> Me contacter
@@ -232,33 +230,31 @@
     </section>
 
     <section class="section">
-        <h2 class="section-title"><span class="mono highlight">01.</span> Expertise Technique <span class="line"></span></h2>
+        <h2 class="section-title"><span class="mono highlight">01.</span> Bagage Académique <span class="line"></span></h2>
         
         <div class="grid-2">
             <div class="card">
                 <div class="mono highlight" style="margin-bottom: 15px;">2025 - 2026 | MASTER 2 ISADS</div>
-                <h3 style="margin-bottom: 20px;">Ingénierie Statistique, Actuariat et Data Science</h3>
-                
+                <h3 style="margin-bottom: 20px;">Ingénierie Statistique & Actuariat</h3>
+                <p style="color: var(--text-dim); margin-bottom: 20px; font-size: 0.9rem;">
+                    Une formation axée sur la modélisation mathématique et la gestion des risques.
+                </p>
                 <ul class="tech-list">
                     <li>
-                        <strong>Spécialisation</strong>
-                        <span>Modélisation prédictive, Scoring & Gestion des risques.</span>
+                        <strong>Focus</strong>
+                        <span>Modélisation prédictive & Statistiques avancées.</span>
                     </li>
                     <li>
-                        <strong>Supervisé</strong>
-                        <span> Régression (Lasso/Ridge), SVM, Arbres de décision...</span>
+                        <strong>Machine Learning</strong>
+                        <span>Algorithmes classiques (Random Forest, Arbres, Régressions).</span>
                     </li>
                     <li>
                         <strong>Non-Supervisé</strong>
-                        <span>Clustering avancé (K-Means, DBSCAN, CAH...).</span>
+                        <span>Clustering (K-Means, CAH) & Analyse de données.</span>
                     </li>
                     <li>
-                        <strong>DataViz / Dim</strong>
-                        <span>Réduction de dimension (ACP, t-SNE, MDS).</span>
-                    </li>
-                    <li>
-                        <strong>Projets</strong>
-                        <span>Deep Learning & Séries Temporelles.</span>
+                        <strong>Séries Temp.</strong>
+                        <span>Analyse et prévision de données temporelles.</span>
                     </li>
                 </ul>
             </div>
@@ -266,23 +262,21 @@
             <div class="card">
                 <div class="mono" style="color: var(--accent-purple); margin-bottom: 15px;">2024 - 2025 | MASTER 1 SDTS</div>
                 <h3 style="margin-bottom: 20px;">Systèmes Distribués & Data Science</h3>
-                
+                <p style="color: var(--text-dim); margin-bottom: 20px; font-size: 0.9rem;">
+                    Une année dédiée aux fondamentaux de la programmation et de la donnée.
+                </p>
                 <ul class="tech-list">
                     <li>
-                        <strong>Cœur Tech</strong>
-                        <span>Architecture Big Data & Algorithmique complexe.</span>
+                        <strong>Technique</strong>
+                        <span>Algorithmique & Gestion de bases de données (SQL).</span>
                     </li>
                     <li>
-                        <strong>Stack Python</strong>
-                        <span>Pandas, NumPy, Scikit-Learn, Matplotlib, Seaborn.</span>
+                        <strong>Programmation</strong>
+                        <span>Python (Pandas, Scikit-Learn, Matplotlib).</span>
                     </li>
                     <li>
-                        <strong>Data Eng</strong>
-                        <span>SQL Avancé, Bases de données relationnelles & NoSQL.</span>
-                    </li>
-                    <li>
-                        <strong>Cloud/Ops</strong>
-                        <span>Initiation aux environnements distribués, Git & Docker.</span>
+                        <strong>Outils</strong>
+                        <span>Git, Docker (Initiation), Environnements Linux.</span>
                     </li>
                 </ul>
             </div>
@@ -290,60 +284,60 @@
     </section>
 
     <section class="section">
-        <h2 class="section-title"><span class="mono highlight">02.</span> Projets Clés <span class="line"></span></h2>
+        <h2 class="section-title"><span class="mono highlight">02.</span> Projets Académiques <span class="line"></span></h2>
         
         <div class="grid-3">
             <div class="card">
                 <div class="card-icon"><i class="fa-brands fa-python"></i></div>
-                <h3>Optimisation (Algo)</h3>
+                <h3>Algorithmique</h3>
                 <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 15px;">
-                    Implémentation des algorithmes <strong>A* et Bellman-Ford</strong> pour le métro parisien. Résolution de problèmes de graphes complexes.
+                    Réalisation d'un projet sur les algorithmes de plus court chemin (A*, Bellman-Ford) appliqués au métro parisien.
                 </p>
-                <div class="mono" style="font-size: 0.8rem; color: var(--accent-cyan);">Python • Graph Theory</div>
+                <div class="mono" style="font-size: 0.8rem; color: var(--accent-cyan);">Python • Graphes</div>
             </div>
 
             <div class="card">
                 <div class="card-icon"><i class="fa-solid fa-chart-pie"></i></div>
-                <h3>Analyse Sociologique</h3>
+                <h3>Analyse de Données</h3>
                 <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 15px;">
-                    Étude multivariée (ACP, ACM) pour segmenter des comportements. Idéal pour le <strong>Marketing</strong> et la connaissance client.
+                    Étude statistique (ACP, ACM) pour identifier des profils types. Une approche utile pour la segmentation client.
                 </p>
-                <div class="mono" style="font-size: 0.8rem; color: var(--accent-cyan);">R • Clustering • DataViz</div>
+                <div class="mono" style="font-size: 0.8rem; color: var(--accent-cyan);">R • Clustering</div>
             </div>
 
             <div class="card">
                 <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                <h3>Cybersécurité</h3>
+                <h3>Rigueur & Sécurité</h3>
                 <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 15px;">
-                    Stage chez <strong>Ineo Défense</strong>. Chiffrement et intégrité des données. Une rigueur indispensable pour vos clients Banque/Assurance.
+                    Stage chez <strong>Ineo Défense</strong>. Travail sur le chiffrement de données. J'y ai appris la rigueur et le sens de la confidentialité.
                 </p>
-                <div class="mono" style="font-size: 0.8rem; color: var(--accent-cyan);">Security • Cryptography</div>
+                <div class="mono" style="font-size: 0.8rem; color: var(--accent-cyan);">Cybersécurité</div>
             </div>
         </div>
     </section>
 
     <section class="section">
-        <h2 class="section-title"><span class="mono highlight">03.</span> Pourquoi Equancy & Moi ? <span class="line"></span></h2>
+        <h2 class="section-title"><span class="mono highlight">03.</span> Ma Démarche <span class="line"></span></h2>
         
         <div class="card" style="border-left: 4px solid var(--accent-cyan);">
             <div style="display: flex; flex-direction: column; gap: 20px;">
                 <div>
-                    <h3 style="margin-bottom: 10px;">L'Esprit Consultant : S'adapter et être rigoureux</h3>
+                    <h3 style="margin-bottom: 10px;">Apprendre et Contribuer</h3>
                     <p style="color: var(--text-dim);">
-                        Chez Equancy, un consultant doit savoir parler à la machine ET au client. Mon parcours hybride est ma force :
+                        Je sais qu'il y a un écart entre l'école et le monde du conseil. C'est pour cela que je veux rejoindre Equancy : pour être formé par les meilleurs.
                     </p>
                 </div>
                 <div class="grid-2" style="margin-top: 10px;">
                     <div>
-                        <h4 style="color: var(--accent-cyan); margin-bottom: 10px;"><i class="fa-solid fa-building-columns"></i> Banque & Assurance</h4>
+                        <h4 style="color: var(--accent-cyan); margin-bottom: 10px;"><i class="fa-solid fa-hands-holding-circle"></i> Ce que j'apporte</h4>
                         <p style="font-size: 0.9rem; color: var(--text-dim);">
-                            Expérience chez <strong>BNP Paribas</strong> (Conformité, KYC) et formation d'Actuaire. Je comprends les contraintes réglementaires et la gestion des risques.
+                            Ma capacité de travail, mes bases techniques en Python/Stats et ma connaissance des codes du service client (Expérience Florence Doré / BNP).
                         </p>
                     </div>
                     <div>
-                        <h4 style="color: var(--accent-cyan); margin-bottom: 10px;"><i class="fa-solid fa-gem"></i> Retail & Luxe</h4>
+                        <h4 style="color: var(--accent-purple); margin-bottom: 10px;"><i class="fa-solid fa-lightbulb"></i> Ce que je veux apprendre</h4>
                         <p style="font-size: 0.9rem; color: var(--text-dim);">
-                            Expérience chez <strong>Florence Doré</strong>. Je maîtrise les codes du service client haut de gamme et l'excellence opérationnelle.
+                            Comment transformer une analyse de données en recommandation stratégique pour vos clients (Luxe, Banque, Retail...).
                         </p>
                     </div>
                 </div>
@@ -352,12 +346,12 @@
     </section>
 
     <footer>
-        <div class="mono" style="margin-bottom: 20px;">Prêt à rejoindre l'équipe Data Science d'Equancy</div>
+        <div class="mono" style="margin-bottom: 20px;">Disponible pour échanger sur mon parcours</div>
         <a href="tel:+33610748702" class="btn btn-primary" style="font-size: 0.9rem;">
             <i class="fa-solid fa-phone"></i> 06 10 74 87 02
         </a>
         <div style="margin-top: 30px; opacity: 0.5;">
-            &copy; 2026 Vincent Guiblain. Portfolio dédié Equancy.
+            &copy; 2026 Vincent Guiblain.
         </div>
     </footer>
 
