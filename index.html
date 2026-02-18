@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vincent Guiblain | Data Scientist Consultant</title>
+    <title>Vincent Guiblain | Candidature Equancy</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* --- DESIGN SYSTEM "DATA CONSULTING" --- */
+        /* --- DESIGN SYSTEM : TECH CONSULTING --- */
         :root {
-            --bg-dark: #0f172a;       /* Bleu nuit très profond */
-            --bg-card: #1e293b;       /* Bleu gris pour les cartes */
-            --accent-cyan: #22d3ee;   /* Cyan électrique (Data) */
-            --accent-purple: #818cf8; /* Violet (Intelligence Artificielle) */
-            --text-light: #f8fafc;
-            --text-dim: #94a3b8;
+            --bg-dark: #0f172a;       
+            --bg-card: #1e293b;       
+            --accent-cyan: #22d3ee;   
+            --accent-purple: #818cf8; 
+            --text-light: #f8fafc;    
+            --text-dim: #94a3b8;      
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -27,18 +27,11 @@
             background-color: var(--bg-dark);
             color: var(--text-light);
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
-        h1, h2, h3 { font-family: 'Inter', sans-serif; font-weight: 800; }
+        h1, h2, h3 { font-family: 'Inter', sans-serif; font-weight: 800; color: #fff; }
         .mono { font-family: 'JetBrains Mono', monospace; }
-        
         .highlight { color: var(--accent-cyan); }
-        .gradient-text {
-            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
 
         /* --- NAVBAR --- */
         .navbar {
@@ -54,7 +47,18 @@
             border-bottom: 1px solid rgba(34, 211, 238, 0.1);
         }
 
-        .logo { font-size: 1.1rem; font-weight: 700; letter-spacing: -0.5px; }
+        .logo { font-size: 1.2rem; font-weight: 700; }
+        
+        /* CIBLE EQUANCY DANS LA BARRE */
+        .status-badge {
+            background: rgba(34, 211, 238, 0.1);
+            color: var(--accent-cyan);
+            padding: 8px 15px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(34, 211, 238, 0.2);
+            letter-spacing: 1px;
+        }
 
         /* --- HERO SECTION --- */
         .hero {
@@ -63,127 +67,133 @@
             align-items: center;
             padding: 0 10%;
             position: relative;
+            background: radial-gradient(circle at top right, rgba(34,211,238,0.05) 0%, rgba(15,23,42,0) 60%);
         }
 
-        /* Effet de fond "Matrix" subtil */
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -20%; right: -10%;
-            width: 600px; height: 600px;
-            background: radial-gradient(circle, rgba(34,211,238,0.1) 0%, rgba(15,23,42,0) 70%);
-            border-radius: 50%;
-            z-index: -1;
-        }
-
-        .hero-content { max-width: 800px; }
+        .hero-content { max-width: 850px; z-index: 10; }
         
-        .hero h1 { font-size: 4.5rem; line-height: 1.1; margin-bottom: 25px; letter-spacing: -2px; }
-        .hero p { font-size: 1.25rem; color: var(--text-dim); margin-bottom: 40px; max-width: 600px; }
-
-        .tag {
-            background: rgba(34, 211, 238, 0.1);
-            color: var(--accent-cyan);
-            padding: 5px 12px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            margin-bottom: 20px;
-            display: inline-block;
+        .hero h1 { 
+            font-size: 4rem; 
+            line-height: 1.1; 
+            margin-bottom: 25px; 
+            letter-spacing: -1px;
+        }
+        
+        .hero p { 
+            font-size: 1.25rem; 
+            color: var(--text-dim); 
+            margin-bottom: 40px; 
+            max-width: 650px; 
         }
 
-        /* Boutons Tech */
-        .btn-group { display: flex; gap: 20px; }
-        
+        /* Boutons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-family: 'JetBrains Mono', monospace;
+            transition: all 0.3s;
+            margin-right: 15px;
+        }
+
         .btn-primary {
-            padding: 15px 35px;
             background: transparent;
             border: 1px solid var(--accent-cyan);
             color: var(--accent-cyan);
-            font-family: 'JetBrains Mono', monospace;
-            text-decoration: none;
-            border-radius: 4px;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
         }
 
         .btn-primary:hover {
             background: rgba(34, 211, 238, 0.1);
-            box-shadow: 0 0 20px rgba(34, 211, 238, 0.2);
+            box-shadow: 0 0 15px rgba(34, 211, 238, 0.2);
         }
 
-        /* --- SECTION FORMATION (Double Diplôme) --- */
+        .btn-secondary {
+            border: 1px solid var(--text-dim);
+            color: var(--text-dim);
+        }
+
+        .btn-secondary:hover {
+            border-color: #fff;
+            color: #fff;
+        }
+
+        /* --- SECTIONS --- */
         .section { padding: 100px 10%; }
-        .section-title { font-size: 2.5rem; margin-bottom: 50px; display: flex; align-items: center; gap: 15px; }
+        .section-title { 
+            font-size: 2rem; 
+            margin-bottom: 50px; 
+            display: flex; 
+            align-items: center; 
+            gap: 15px; 
+        }
         .line { height: 1px; background: #334155; flex-grow: 1; }
 
-        .formation-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
+        /* --- GRID CARDS --- */
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
 
-        .formation-card {
+        .card {
             background: var(--bg-card);
             padding: 30px;
             border-radius: 8px;
-            border-left: 4px solid var(--accent-cyan);
-        }
-
-        .formation-year { font-size: 0.9rem; color: var(--accent-cyan); margin-bottom: 10px; }
-        .formation-title { font-size: 1.5rem; margin-bottom: 15px; }
-        .formation-list li {
-            list-style: none;
-            margin-bottom: 8px;
-            color: var(--text-dim);
-            display: flex;
-            align-items: center;
-        }
-        .formation-list li::before {
-            content: "▹";
-            color: var(--accent-cyan);
-            margin-right: 10px;
-        }
-
-        /* --- SECTION PROJETS (TECH) --- */
-        .project-card {
-            background: var(--bg-card);
-            padding: 30px;
-            border-radius: 8px;
-            margin-bottom: 30px;
+            border: 1px solid rgba(255,255,255,0.05);
             transition: transform 0.3s;
-            border: 1px solid transparent;
+        }
+
+        .card:hover { 
+            transform: translateY(-5px); 
+            border-color: var(--accent-cyan);
+        }
+
+        .card-icon { font-size: 2rem; color: var(--accent-cyan); margin-bottom: 20px; }
+
+        /* --- CORRECTION ALIGNEMENT CSS --- */
+        ul.tech-list { padding: 0; }
+        
+        ul.tech-list li {
+            list-style: none;
+            margin-bottom: 12px;
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            display: flex; /* Flexbox pour aligner */
+            align-items: flex-start;
         }
         
-        .project-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(34, 211, 238, 0.3);
+        ul.tech-list li::before {
+            content: "▹";
+            color: var(--accent-cyan);
+            margin-right: 15px;
+            margin-top: 2px;
+            flex-shrink: 0;
         }
 
-        .project-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }
-        .folder-icon { font-size: 2.5rem; color: var(--accent-purple); }
-        .tech-stack { display: flex; gap: 15px; font-size: 0.8rem; color: var(--text-dim); font-family: 'JetBrains Mono', monospace; margin-top: 20px; }
-
-        /* --- SECTION EXPERIENCE (CONSULTING) --- */
-        .exp-box {
-            border-left: 2px solid #334155;
-            padding-left: 30px;
-            position: relative;
-        }
-        .exp-box::before {
-            content: '';
-            position: absolute;
-            left: -6px; top: 0;
-            width: 10px; height: 10px;
-            background: var(--accent-cyan);
-            border-radius: 50%;
+        /* Largeur fixe pour les titres (Supervisé, etc.) pour que tout soit aligné */
+        ul.tech-list li strong {
+            color: #fff;
+            min-width: 130px; 
+            display: inline-block;
+            font-weight: 600;
+            flex-shrink: 0;
         }
 
-        /* --- RESPONSIVE --- */
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 50px 20px;
+            border-top: 1px solid #1e293b;
+            color: var(--text-dim);
+            font-size: 0.9rem;
+        }
+
         @media (max-width: 900px) {
-            .hero h1 { font-size: 3rem; }
-            .formation-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.8rem; }
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
             .navbar { padding: 20px; }
+            ul.tech-list li { flex-direction: column; } /* Sur mobile, on empile */
+            ul.tech-list li strong { margin-bottom: 5px; }
         }
     </style>
 </head>
@@ -191,141 +201,160 @@
 
     <nav class="navbar">
         <div class="logo mono">
-            <span style="color: var(--accent-cyan);">def</span> vincent_guiblain<span style="color: var(--accent-purple);">()</span>:
+            <span style="color: var(--text-light);">Vincent.</span><span style="color: var(--accent-cyan);">Data()</span>
         </div>
-        <div class="mono" style="font-size: 0.8rem; color: var(--text-dim);">
-            STATUS: <span style="color: #4ade80;">AVAILABLE_APRIL_2026</span>
+        <div class="mono status-badge">
+            TARGET: EQUANCY_DATA_TEAM
         </div>
     </nav>
 
     <section class="hero">
         <div class="hero-content">
-            <div class="tag mono">DATA SCIENTIST JUNIOR</div>
-            <h1>Ingénierie Statistique<br>& <span class="gradient-text">Machine Learning.</span></h1>
+            <div class="mono" style="color: var(--accent-cyan); margin-bottom: 20px;">Bonjour, je suis Vincent Guiblain</div>
+            <h1>Data Scientist pour<br><span style="color: var(--text-light);">Equancy.</span></h1>
             <p>
-                Futur ingénieur <strong>ISADS</strong> avec un background solide en Data Science (M1 SDTS).
-                Je construis des modèles prédictifs robustes et je traduis la donnée complexe en stratégie business pour le Retail et le Luxe.
+                Futur ingénieur <strong>ISADS</strong> (Statistique & Data Science).<br>
+                Je suis prêt à mettre mon expertise <strong>Machine Learning</strong> et ma double culture (Tech & Retail) au service des clients d'<strong>Equancy</strong>.
             </p>
             
-            <div class="btn-group">
-                <a href="cv_vincent.pdf" target="_blank" class="btn-primary">
-                    <i class="fa-regular fa-file-code"></i> TÉLÉCHARGER LE CV
+            <div style="margin-top: 30px;">
+                <a href="cv_vincent.pdf" target="_blank" class="btn btn-primary">
+                    <i class="fa-regular fa-file-pdf" style="margin-right: 10px;"></i> Voir mon CV
                 </a>
-                <a href="mailto:vincent.guiblain@gmail.com" class="btn-primary" style="border-color: var(--accent-purple); color: var(--accent-purple);">
-                    <i class="fa-solid fa-envelope"></i> CONTACT
+                <a href="mailto:vincent.guiblain@gmail.com" class="btn btn-secondary">
+                    <i class="fa-solid fa-envelope" style="margin-right: 10px;"></i> Me contacter
                 </a>
             </div>
         </div>
     </section>
 
     <section class="section">
-        <h2 class="section-title"><span class="mono highlight">01.</span> Formation Hybride <span class="line"></span></h2>
+        <h2 class="section-title"><span class="mono highlight">01.</span> Expertise Technique <span class="line"></span></h2>
         
-        <div class="formation-grid">
-            <div class="formation-card">
-                <div class="formation-year mono">2025 - 2026 | M2 ISADS (UVSQ)</div>
-                <h3 class="formation-title">Ingénierie Statistique & Actuariat</h3>
-                <ul class="formation-list">
-                    <li><strong>Spécialisation :</strong> Modélisation prédictive avancée & Scoring.</li>
-                    <li><strong>Machine Learning :</strong> Apprentissage Supervisé (Random Forest, XGBoost) & Non-supervisé.</li>
-                    <li><strong>Projets :</strong> Deep Learning & Séries Temporelles.</li>
+        <div class="grid-2">
+            <div class="card">
+                <div class="mono highlight" style="margin-bottom: 15px;">2025 - 2026 | MASTER 2 ISADS</div>
+                <h3 style="margin-bottom: 20px;">Ingénierie Statistique & Actuariat</h3>
+                
+                <ul class="tech-list">
+                    <li>
+                        <strong>Spécialisation</strong>
+                        <span>Modélisation prédictive, Scoring & Gestion des risques.</span>
+                    </li>
+                    <li>
+                        <strong>Supervisé</strong>
+                        <span>Random Forest, XGBoost, Régression (Lasso/Ridge), SVM, Arbres de décision.</span>
+                    </li>
+                    <li>
+                        <strong>Non-Supervisé</strong>
+                        <span>Clustering avancé (K-Means, DBSCAN, CAH).</span>
+                    </li>
+                    <li>
+                        <strong>DataViz / Dim</strong>
+                        <span>Réduction de dimension (ACP, t-SNE, MDS).</span>
+                    </li>
+                    <li>
+                        <strong>Projets</strong>
+                        <span>Deep Learning & Séries Temporelles.</span>
+                    </li>
                 </ul>
             </div>
 
-            <div class="formation-card" style="border-color: var(--accent-purple);">
-                <div class="formation-year mono" style="color: var(--accent-purple);">2024 - 2025 | M1 SDTS (UPEC)</div>
-                <h3 class="formation-title">Data Science & Systèmes Distribués</h3>
-                <ul class="formation-list">
-                    <li><strong>Cœur Tech :</strong> Algorithmique complexe & Architecture Big Data.</li>
-                    <li><strong>Programmation :</strong> Python Expert (Pandas, Scikit-Learn), SQL avancé.</li>
-                    <li><strong>Cloud :</strong> Initiation aux environnements distribués & Cloud Computing.</li>
+            <div class="card">
+                <div class="mono" style="color: var(--accent-purple); margin-bottom: 15px;">2024 - 2025 | MASTER 1 SDTS</div>
+                <h3 style="margin-bottom: 20px;">Systèmes Distribués & Data Science</h3>
+                
+                <ul class="tech-list">
+                    <li>
+                        <strong>Cœur Tech</strong>
+                        <span>Architecture Big Data & Algorithmique complexe.</span>
+                    </li>
+                    <li>
+                        <strong>Stack Python</strong>
+                        <span>Pandas, NumPy, Scikit-Learn, Matplotlib, Seaborn.</span>
+                    </li>
+                    <li>
+                        <strong>Data Eng</strong>
+                        <span>SQL Avancé, Bases de données relationnelles & NoSQL.</span>
+                    </li>
+                    <li>
+                        <strong>Cloud/Ops</strong>
+                        <span>Initiation aux environnements distribués, Git & Docker.</span>
+                    </li>
                 </ul>
             </div>
         </div>
     </section>
 
     <section class="section">
-        <h2 class="section-title"><span class="mono highlight">02.</span> Portfolio Technique <span class="line"></span></h2>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-            
-            <div class="project-card">
-                <div class="project-header">
-                    <div class="folder-icon"><i class="fa-solid fa-network-wired"></i></div>
-                    <i class="fa-brands fa-python" style="font-size: 1.5rem; color: var(--text-dim);"></i>
-                </div>
-                <h3>Optimisation Algorithmique</h3>
-                <p style="color: var(--text-dim); font-size: 0.9rem;">
-                    Implémentation des algorithmes <strong>A* et Bellman-Ford</strong> pour calculer les itinéraires optimaux sur le réseau du métro parisien. Gestion de graphes complexes.
+        <h2 class="section-title"><span class="mono highlight">02.</span> Projets Clés <span class="line"></span></h2>
+        
+        <div class="grid-3">
+            <div class="card">
+                <div class="card-icon"><i class="fa-brands fa-python"></i></div>
+                <h3>Optimisation (Algo)</h3>
+                <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 15px;">
+                    Implémentation des algorithmes <strong>A* et Bellman-Ford</strong> pour le métro parisien. Résolution de problèmes de graphes complexes.
                 </p>
-                <div class="tech-stack">
-                    <span>Python</span>
-                    <span>Graph Theory</span>
-                    <span>Optimization</span>
-                </div>
+                <div class="mono" style="font-size: 0.8rem; color: var(--accent-cyan);">Python • Graph Theory</div>
             </div>
 
-            <div class="project-card">
-                <div class="project-header">
-                    <div class="folder-icon"><i class="fa-solid fa-chart-pie"></i></div>
-                    <i class="fa-brands fa-r-project" style="font-size: 1.5rem; color: var(--text-dim);"></i>
-                </div>
-                <h3>Analyse Multivariée (Retail/Socio)</h3>
-                <p style="color: var(--text-dim); font-size: 0.9rem;">
-                    Analyse de données sociologiques (ACP, ACM) pour identifier des clusters de comportements. Applicable à la segmentation client en Retail.
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-chart-pie"></i></div>
+                <h3>Analyse Sociologique</h3>
+                <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 15px;">
+                    Étude multivariée (ACP, ACM) pour segmenter des comportements. Idéal pour le <strong>Marketing</strong> et la connaissance client.
                 </p>
-                <div class="tech-stack">
-                    <span>R Language</span>
-                    <span>Statistics</span>
-                    <span>Clustering</span>
-                </div>
+                <div class="mono" style="font-size: 0.8rem; color: var(--accent-cyan);">R • Clustering • DataViz</div>
             </div>
 
-            <div class="project-card">
-                <div class="project-header">
-                    <div class="folder-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                    <i class="fa-solid fa-code" style="font-size: 1.5rem; color: var(--text-dim);"></i>
-                </div>
-                <h3>Cryptographie & Sécurité</h3>
-                <p style="color: var(--text-dim); font-size: 0.9rem;">
-                    Stage chez <strong>Ineo Défense</strong>. Développement d'algorithmes de chiffrement sur microcontrôleur. Rigueur absolue et gestion de données sensibles.
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <h3>Cybersécurité</h3>
+                <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 15px;">
+                    Stage chez <strong>Ineo Défense</strong>. Chiffrement et intégrité des données. Une rigueur indispensable pour vos clients Banque/Assurance.
                 </p>
-                <div class="tech-stack">
-                    <span>C/C++</span>
-                    <span>Security</span>
-                    <span>Embedded</span>
-                </div>
+                <div class="mono" style="font-size: 0.8rem; color: var(--accent-cyan);">Security • Cryptography</div>
             </div>
-
         </div>
     </section>
 
     <section class="section">
-        <h2 class="section-title"><span class="mono highlight">03.</span> L'Approche Consultant <span class="line"></span></h2>
+        <h2 class="section-title"><span class="mono highlight">03.</span> Pourquoi Equancy & Moi ? <span class="line"></span></h2>
         
-        <div style="background: rgba(34, 211, 238, 0.05); padding: 40px; border-radius: 8px;">
-            <div style="display: flex; gap: 20px; align-items: flex-start;">
-                <div style="font-size: 3rem; color: var(--accent-cyan);"><i class="fa-solid fa-user-tie"></i></div>
+        <div class="card" style="border-left: 4px solid var(--accent-cyan);">
+            <div style="display: flex; flex-direction: column; gap: 20px;">
                 <div>
-                    <h3 style="margin-bottom: 15px;">Retail, Luxe & Excellence Client</h3>
-                    <p style="color: var(--text-dim); margin-bottom: 20px;">
-                        Au-delà de la technique, un Data Scientist chez Equancy doit comprendre le métier du client.
-                        Mon expérience chez <strong>Florence Doré</strong> et <strong>BNP Paribas</strong> m'a appris les codes du service haut de gamme.
+                    <h3 style="margin-bottom: 10px;">L'Esprit Consultant : Adaptabilité & Rigueur</h3>
+                    <p style="color: var(--text-dim);">
+                        Chez Equancy, un consultant doit savoir parler à la machine ET au client. Mon parcours hybride est ma force :
                     </p>
-                    <ul class="formation-list">
-                        <li>Compréhension des enjeux opérationnels (Flux, Satisfaction client).</li>
-                        <li>Capacité à vulgariser la donnée pour des interlocuteurs non-techniques.</li>
-                        <li>Adaptabilité et gestion du stress en environnement exigeant.</li>
-                    </ul>
+                </div>
+                <div class="grid-2" style="margin-top: 10px;">
+                    <div>
+                        <h4 style="color: var(--accent-cyan); margin-bottom: 10px;"><i class="fa-solid fa-building-columns"></i> Banque & Assurance</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-dim);">
+                            Expérience chez <strong>BNP Paribas</strong> (Conformité, KYC) et formation d'Actuaire. Je comprends les contraintes réglementaires et la gestion des risques.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--accent-cyan); margin-bottom: 10px;"><i class="fa-solid fa-gem"></i> Retail & Luxe</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-dim);">
+                            Expérience chez <strong>Florence Doré</strong>. Je maîtrise les codes du service client haut de gamme et l'excellence opérationnelle.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer style="text-align: center; padding: 40px; color: var(--text-dim); font-size: 0.8rem;" class="mono">
-        <div>Designed & Built by Vincent Guiblain</div>
-        <div style="margin-top: 10px;">
-            <a href="mailto:vincent.guiblain@gmail.com" style="color: var(--accent-cyan); text-decoration: none;">vincent.guiblain@gmail.com</a>
+    <footer>
+        <div class="mono" style="margin-bottom: 20px;">Prêt à rejoindre l'équipe Data Science d'Equancy</div>
+        <a href="tel:+33610748702" class="btn btn-primary" style="font-size: 0.9rem;">
+            <i class="fa-solid fa-phone"></i> 06 10 74 87 02
+        </a>
+        <div style="margin-top: 30px; opacity: 0.5;">
+            &copy; 2026 Vincent Guiblain. Portfolio dédié Equancy.
         </div>
     </footer>
 
